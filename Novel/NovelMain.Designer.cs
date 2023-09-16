@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
+            label4 = new Label();
             label3 = new Label();
             label1 = new Label();
             label2 = new Label();
@@ -39,24 +40,38 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(label4, 0, 3);
             tableLayoutPanel1.Controls.Add(label3, 0, 2);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
             tableLayoutPanel1.Font = new Font("Goudy Stout", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
             tableLayoutPanel1.Location = new Point(0, 453);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 3;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
+            tableLayoutPanel1.RowCount = 4;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.Size = new Size(1259, 119);
             tableLayoutPanel1.TabIndex = 1;
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.None;
+            label4.AutoSize = true;
+            label4.Location = new Point(556, 90);
+            label4.Name = "label4";
+            label4.Size = new Size(147, 26);
+            label4.TabIndex = 3;
+            label4.Text = "label4";
+            label4.TextAlign = ContentAlignment.MiddleCenter;
+            label4.Click += label4_Click;
             // 
             // label3
             // 
             label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
-            label3.Location = new Point(556, 85);
+            label3.Location = new Point(556, 59);
             label3.Name = "label3";
             label3.Size = new Size(147, 26);
             label3.TabIndex = 2;
@@ -68,24 +83,24 @@
             // 
             label1.Anchor = AnchorStyles.None;
             label1.AutoSize = true;
-            label1.Location = new Point(556, 6);
+            label1.Location = new Point(556, 1);
             label1.Name = "label1";
             label1.Size = new Size(147, 26);
             label1.TabIndex = 0;
             label1.Text = "label1";
             label1.TextAlign = ContentAlignment.MiddleCenter;
-            label1.Click += label1_Click;
             // 
             // label2
             // 
             label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
-            label2.Location = new Point(556, 45);
+            label2.Location = new Point(556, 30);
             label2.Name = "label2";
             label2.Size = new Size(147, 26);
             label2.TabIndex = 1;
             label2.Text = "label2";
             label2.TextAlign = ContentAlignment.MiddleCenter;
+            label2.Click += label2_Click;
             // 
             // NovelMain
             // 
@@ -97,7 +112,6 @@
             Margin = new Padding(5, 4, 5, 4);
             Name = "NovelMain";
             Text = "NovelMain";
-            Load += NovelMain_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -109,5 +123,6 @@
         private Label label1;
         private Label label3;
         private Label label2;
+        private Label label4;
     }
 }
