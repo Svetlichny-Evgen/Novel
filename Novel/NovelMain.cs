@@ -6,18 +6,13 @@ namespace Novel
         public NovelMain()
         {
             InitializeComponent();
-            label1.Text = "Ты просыпаешься в неизвестном месте.";
-            label2.Text = "Попробовать осмотреться.";
-            label3.Text = "Попробовать выйти.";
-            label4.Hide();
+            UpdateText("Привет. Так это про тебя мне говорили? \nМеня зовут Роджер, а это моя мастерская. Тебя зовут Вернон, я прав?", "Да", "Нет");
 
             // Добавляем обработчики событий MouseEnter и MouseLeave
-            label2.MouseEnter += Label_MouseEnter;
-            label2.MouseLeave += Label_MouseLeave;
-            label3.MouseEnter += Label_MouseEnter;
-            label3.MouseLeave += Label_MouseLeave;
-            label4.MouseEnter += Label_MouseEnter;
-            label4.MouseLeave += Label_MouseLeave;
+            Choice1.MouseEnter += Label_MouseEnter;
+            Choice1.MouseLeave += Label_MouseLeave;
+            Choice2.MouseEnter += Label_MouseEnter;
+            Choice2.MouseLeave += Label_MouseLeave;
         }
 
         private void Label_MouseEnter(object sender, EventArgs e)
@@ -42,53 +37,47 @@ namespace Novel
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void UpdateText(string eventText, string choice1Text, string choice2Text)
+        {
+            Event.Text = eventText;
+            Choice1.Text = choice1Text;
+            Choice2.Text = choice2Text;
+        }
+
+        private void Choice1_Click(object sender, EventArgs e)
         {
             if (storyStep == 0)
             {
-                label1.Text = "Ты находишь карту и компас.";
-                label2.Text = "Идти на север.";
-                label3.Text = "Идти на юг.";
+                UpdateText("Хорошо, тогда введу тебя в курс дела.\n Я разрабатываю новую супер пупер мега гипер мощную турель. \nТебя прислали сюда, так как мне нужен ассистент, ибо это может ускорить ход разработки моего чудо-прибора.", "Хорошо, и что нужно делать?", "А это не опасно?");
                 storyStep = 1;
             }
             else if (storyStep == 1)
             {
-                label1.Text = "Ты нашёл сундук с сокровищами!";
-                label2.Text = "Поднять сокровища.";
-                label3.Text = "Оставить сокровища и продолжить исследование.";
+                UpdateText("Я тебе буду давать задания из разряда подай-принеси, ничего сложного. \nТолько будь осторожен и ничего не урони, а то всё взлетит наверх!", "Постараюсь... Ну что, приступим!", "Чтоооо??? Нет, это опасно, пусть тебе найдут другого ассистента (КОНЕЦ)");
                 storyStep = 2;
-            }
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-            if (storyStep == 0)
-            {
-                label1.Text = "Ты выходишь из помещения и попадаешь в опасный лес.";
-                label2.Text = "Попробовать вернуться назад.";
-                label3.Text = "Идти глубже в лес.";
-                storyStep = 3;
-            }
-            else if (storyStep == 1)
-            {
-                label1.Text = "Ты заблудился в лесу и не можешь найти дорогу обратно.";
-                label2.Text = "Попробовать вернуться назад.";
-                label3.Text = "Продолжать бродить по лесу.";
-                storyStep = 4;
             }
             else if (storyStep == 2)
             {
-                label1.Text = "Ты поднимаешь сокровища, но внезапно сработала ловушка!";
-                label2.Text = "Попробовать справиться с ловушкой.";
-                label3.Text = "Попытаться бежать.";
-                storyStep = 5;
+                UpdateText("Постараюсь... Ну что, приступим!", "", "");
+                storyStep = 3;
             }
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
 
+        private void Choice2_Click(object sender, EventArgs e)
+        {
+            if (storyStep == 0)
+            {
+                UpdateText("Хмм... Ну если так, то выметайся отсюда (КОНЕЦ)", "", "");
+            }
+            //else if (storyStep==2)
+            //{
+            //    UpdateText()
+            //}
+            else if (storyStep == 3)
+            {
+                UpdateText("Чтоооо??? Нет, это опасно, пусть тебе найдут другого ассистента (КОНЕЦ)", "", "");
+            }
+        }
     }
 }

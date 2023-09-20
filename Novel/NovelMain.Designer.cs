@@ -28,101 +28,105 @@
         /// </summary>
         private void InitializeComponent()
         {
+            pictureBox1 = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            label4 = new Label();
-            label3 = new Label();
-            label1 = new Label();
-            label2 = new Label();
+            Choice2 = new Label();
+            Event = new Label();
+            Choice1 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackgroundImage = Properties.Resources.Workshop;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.TalkingEngineer;
+            pictureBox1.Location = new Point(0, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(920, 613);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 2;
+            pictureBox1.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(label4, 0, 3);
-            tableLayoutPanel1.Controls.Add(label3, 0, 2);
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(label2, 0, 1);
+            tableLayoutPanel1.Controls.Add(Choice2, 0, 2);
+            tableLayoutPanel1.Controls.Add(Event, 0, 0);
+            tableLayoutPanel1.Controls.Add(Choice1, 0, 1);
+            tableLayoutPanel1.Dock = DockStyle.Bottom;
             tableLayoutPanel1.Font = new Font("Goudy Stout", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
-            tableLayoutPanel1.Location = new Point(0, 453);
+            tableLayoutPanel1.Location = new Point(0, 408);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 4;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
-            tableLayoutPanel1.Size = new Size(1259, 119);
-            tableLayoutPanel1.TabIndex = 1;
+            tableLayoutPanel1.RowCount = 3;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(920, 205);
+            tableLayoutPanel1.TabIndex = 3;
             // 
-            // label4
+            // Choice2
             // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Location = new Point(556, 90);
-            label4.Name = "label4";
-            label4.Size = new Size(147, 26);
-            label4.TabIndex = 3;
-            label4.Text = "label4";
-            label4.TextAlign = ContentAlignment.MiddleCenter;
-            label4.Click += label4_Click;
+            Choice2.Anchor = AnchorStyles.None;
+            Choice2.AutoSize = true;
+            Choice2.Location = new Point(386, 147);
+            Choice2.Name = "Choice2";
+            Choice2.Size = new Size(147, 26);
+            Choice2.TabIndex = 2;
+            Choice2.Tag = "2";
+            Choice2.Text = "label3";
+            Choice2.TextAlign = ContentAlignment.MiddleCenter;
+            Choice2.Click += Choice2_Click;
             // 
-            // label3
+            // Event
             // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Location = new Point(556, 59);
-            label3.Name = "label3";
-            label3.Size = new Size(147, 26);
-            label3.TabIndex = 2;
-            label3.Text = "label3";
-            label3.TextAlign = ContentAlignment.MiddleCenter;
-            label3.Click += label3_Click;
+            Event.Anchor = AnchorStyles.None;
+            Event.AutoSize = true;
+            Event.Location = new Point(386, 0);
+            Event.Name = "Event";
+            Event.Size = new Size(147, 26);
+            Event.TabIndex = 0;
+            Event.Text = "label1";
+            Event.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // Choice1
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.Location = new Point(556, 1);
-            label1.Name = "label1";
-            label1.Size = new Size(147, 26);
-            label1.TabIndex = 0;
-            label1.Text = "label1";
-            label1.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.Location = new Point(556, 30);
-            label2.Name = "label2";
-            label2.Size = new Size(147, 26);
-            label2.TabIndex = 1;
-            label2.Text = "label2";
-            label2.TextAlign = ContentAlignment.MiddleCenter;
-            label2.Click += label2_Click;
+            Choice1.Anchor = AnchorStyles.None;
+            Choice1.AutoSize = true;
+            Choice1.Location = new Point(386, 57);
+            Choice1.Name = "Choice1";
+            Choice1.Size = new Size(147, 26);
+            Choice1.TabIndex = 1;
+            Choice1.Tag = "1";
+            Choice1.Text = "label2";
+            Choice1.TextAlign = ContentAlignment.MiddleCenter;
+            Choice1.Click += Choice1_Click;
             // 
             // NovelMain
             // 
             AutoScaleDimensions = new SizeF(11F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1257, 570);
+            ClientSize = new Size(920, 613);
             Controls.Add(tableLayoutPanel1);
+            Controls.Add(pictureBox1);
             Font = new Font("MT Extra", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(5, 4, 5, 4);
             Name = "NovelMain";
             Text = "NovelMain";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-
+        private PictureBox pictureBox1;
         private TableLayoutPanel tableLayoutPanel1;
-        private Label label1;
-        private Label label3;
-        private Label label2;
-        private Label label4;
+        private Label Choice2;
+        private Label Event;
+        private Label Choice1;
     }
 }
