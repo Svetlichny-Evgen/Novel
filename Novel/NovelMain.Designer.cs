@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
+            imageLayer = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             Choice2 = new Label();
             Event = new Label();
             Choice1 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)imageLayer).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // imageLayer
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.Workshop;
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.TalkingEngineer;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(920, 613);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 2;
-            pictureBox1.TabStop = false;
+            imageLayer.BackgroundImage = Properties.Resources.Workshop;
+            imageLayer.BackgroundImageLayout = ImageLayout.Zoom;
+            imageLayer.Dock = DockStyle.Fill;
+            imageLayer.Image = Properties.Resources.TalkingEngineer;
+            imageLayer.Location = new Point(0, 0);
+            imageLayer.Name = "imageLayer";
+            imageLayer.Size = new Size(920, 613);
+            imageLayer.SizeMode = PictureBoxSizeMode.Zoom;
+            imageLayer.TabIndex = 2;
+            imageLayer.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
@@ -111,19 +111,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 613);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(pictureBox1);
+            Controls.Add(imageLayer);
             Font = new Font("MT Extra", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(5, 4, 5, 4);
             Name = "NovelMain";
             Text = "NovelMain";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)imageLayer).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
-        private PictureBox pictureBox1;
+        private PictureBox imageLayer;
         private TableLayoutPanel tableLayoutPanel1;
         private Label Choice2;
         private Label Event;
