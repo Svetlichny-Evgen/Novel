@@ -79,7 +79,7 @@
             Choice2.Tag = "2";
             Choice2.Text = "label3";
             Choice2.TextAlign = ContentAlignment.MiddleCenter;
-            Choice2.Click += Choice2_Click;
+            Choice2.Click += Choice_Click;
             // 
             // Event
             // 
@@ -103,7 +103,7 @@
             Choice1.Tag = "1";
             Choice1.Text = "label2";
             Choice1.TextAlign = ContentAlignment.MiddleCenter;
-            Choice1.Click += Choice1_Click;
+            Choice1.Click += Choice_Click;
             // 
             // NovelMain
             // 

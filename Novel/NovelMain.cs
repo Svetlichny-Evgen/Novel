@@ -85,65 +85,116 @@ namespace Novel
             }
         }
 
-        private void Choice1_Click(object sender, EventArgs e)
-        {
-            // Обработка выбора 1
-            if (storyStep == 1)
-            {
-                storyStep = 3; // Переход к событию 3
-                UpdateStory();
-            }
-            else if (storyStep == 3)
-            {
-                // Обработка выбора "Хорошо, и что нужно делать?"
-                storyStep = 4; // Переход к событию 4
-                UpdateStory();
-            }
-            else if (storyStep == 4)
-            {
-                // Обработка выбора "Постараюсь... Ну что, приступим! (Начать заново)"
-                storyStep = 1; // Начало истории
-                UpdateStory();
-            }
-            else if (storyStep == 5)
-            {
-                // Обработка выбора "Нет, пожалуй я откажусь, до свидания! (Начать заново)"
-                storyStep = 1; // Начало истории
-                UpdateStory();
-            }
-        }
+        //private void Choice1_Click(object sender, EventArgs e)
+        //{
+        //    // Обработка выбора 1
+        //    if (storyStep == 1)
+        //    {
+        //        storyStep = 3; // Переход к событию 3
+        //        UpdateStory();
+        //    }
+        //    else if (storyStep == 3)
+        //    {
+        //        // Обработка выбора "Хорошо, и что нужно делать?"
+        //        storyStep = 4; // Переход к событию 4
+        //        UpdateStory();
+        //    }
+        //    else if (storyStep == 4)
+        //    {
+        //        // Обработка выбора "Постараюсь... Ну что, приступим! (Начать заново)"
+        //        storyStep = 1; // Начало истории
+        //        UpdateStory();
+        //    }
+        //    else if (storyStep == 5)
+        //    {
+        //        // Обработка выбора "Нет, пожалуй я откажусь, до свидания! (Начать заново)"
+        //        storyStep = 1; // Начало истории
+        //        UpdateStory();
+        //    }
+        //}
 
-        private void Choice2_Click(object sender, EventArgs e)
+        //private void Choice2_Click(object sender, EventArgs e)
+        //{
+        //    // Обработка выбора 2
+        //    if (storyStep == 1)
+        //    {
+        //        storyStep = 2; // Переход к событию 2
+        //        UpdateStory();
+        //    }
+        //    else if (storyStep == 2)
+        //    {
+        //        storyStep = 1; // Начало истории
+        //        UpdateStory();
+        //    }
+        //    else if (storyStep == 3)
+        //    {
+        //        // Обработка выбора "А это не опасно?"
+        //        storyStep = 5; // Переход к событию 5
+        //        UpdateStory();
+        //    }
+        //    else if (storyStep == 4)
+        //    {
+        //        // Обработка выбора "Постараюсь... Ну что, приступим! (Начать заново)"
+        //        storyStep = 1; // Начало истории
+        //        UpdateStory();
+        //    }
+        //    else if (storyStep == 5)
+        //    {
+        //        // Обработка выбора "Ох. Пожалуй ты прав, ну что ж, за работу (Начать заново)"
+        //        storyStep = 1; // Начало истории
+        //        UpdateStory();
+        //    }
+        //}
+
+        private void Choice_Click(object sender, EventArgs e)
         {
-            // Обработка выбора 2
-            if (storyStep == 1)
+            Label currentLabel = (Label)sender;
+
+            // Определите, какой выбор был сделан, и обработайте его соответствующим образом
+            if (currentLabel == Choice1)
             {
-                storyStep = 2; // Переход к событию 2
-                UpdateStory();
+                if (storyStep == 1)
+                {
+                    storyStep = 3;
+                }
+                else if (storyStep == 3)
+                {
+                    storyStep = 4;
+                }
+                else if (storyStep == 4)
+                {
+                    storyStep = 1;
+                }
+                else if (storyStep == 5)
+                {
+                    storyStep = 1;
+                }
             }
-            else if (storyStep == 2)
+            else if (currentLabel == Choice2)
             {
-                storyStep = 1; // Начало истории
-                UpdateStory();
+                if (storyStep == 1)
+                {
+                    storyStep = 2;
+                }
+                else if (storyStep == 2)
+                {
+                    storyStep = 1;
+                }
+                else if (storyStep == 3)
+                {
+                    storyStep = 5;
+                }
+                else if (storyStep == 4)
+                {
+                    storyStep = 1;
+                }
+                else if (storyStep == 5)
+                {
+                    storyStep = 1;
+                }
             }
-            else if (storyStep == 3)
-            {
-                // Обработка выбора "А это не опасно?"
-                storyStep = 5; // Переход к событию 5
-                UpdateStory();
-            }
-            else if (storyStep == 4)
-            {
-                // Обработка выбора "Постараюсь... Ну что, приступим! (Начать заново)"
-                storyStep = 1; // Начало истории
-                UpdateStory();
-            }
-            else if (storyStep == 5)
-            {
-                // Обработка выбора "Ох. Пожалуй ты прав, ну что ж, за работу (Начать заново)"
-                storyStep = 1; // Начало истории
-                UpdateStory();
-            }
+
+            UpdateStory();
         }
     }
 }
