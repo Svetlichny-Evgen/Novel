@@ -29,9 +29,7 @@
         private void InitializeComponent()
         {
             imageLayer = new PictureBox();
-            Event = new Label();
-            Choice1 = new Label();
-            Choice2 = new Label();
+            choiseControlPanel1 = new ChoiseControlPanel();
             ((System.ComponentModel.ISupportInitialize)imageLayer).BeginInit();
             SuspendLayout();
             // 
@@ -48,43 +46,21 @@
             imageLayer.TabIndex = 2;
             imageLayer.TabStop = false;
             // 
-            // Event
+            // choiseControlPanel1
             // 
-            Event.AutoSize = true;
-            Event.Location = new Point(470, 0);
-            Event.Name = "Event";
-            Event.Size = new Size(91, 19);
-            Event.TabIndex = 3;
-            Event.Text = "label1";
-            // 
-            // Choice1
-            // 
-            Choice1.AutoSize = true;
-            Choice1.Location = new Point(470, 38);
-            Choice1.Name = "Choice1";
-            Choice1.Size = new Size(91, 19);
-            Choice1.TabIndex = 4;
-            Choice1.Text = "label2";
-            Choice1.Click += Choice_Click;
-            // 
-            // Choice2
-            // 
-            Choice2.AutoSize = true;
-            Choice2.Location = new Point(470, 85);
-            Choice2.Name = "Choice2";
-            Choice2.Size = new Size(91, 19);
-            Choice2.TabIndex = 5;
-            Choice2.Text = "label3";
-            Choice2.Click += Choice_Click;
+            choiseControlPanel1.Dock = DockStyle.Bottom;
+            choiseControlPanel1.Location = new Point(0, 388);
+            choiseControlPanel1.Margin = new Padding(5, 4, 5, 4);
+            choiseControlPanel1.Name = "choiseControlPanel1";
+            choiseControlPanel1.Size = new Size(920, 225);
+            choiseControlPanel1.TabIndex = 3;
             // 
             // NovelMain
             // 
             AutoScaleDimensions = new SizeF(11F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(920, 613);
-            Controls.Add(Choice2);
-            Controls.Add(Choice1);
-            Controls.Add(Event);
+            Controls.Add(choiseControlPanel1);
             Controls.Add(imageLayer);
             Font = new Font("MT Extra", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point);
             Margin = new Padding(5, 4, 5, 4);
@@ -92,13 +68,10 @@
             Text = "NovelMain";
             ((System.ComponentModel.ISupportInitialize)imageLayer).EndInit();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
         private PictureBox imageLayer;
-        private Label Event;
-        private Label Choice1;
-        private Label Choice2;
+        private ChoiseControlPanel choiseControlPanel1;
     }
 }

@@ -2,53 +2,21 @@ namespace Novel
 {
     public partial class NovelMain : Form
     {
+
+        private ChoiseControlPanel choiseControlPanel;
         public NovelMain()
         {
             InitializeComponent();
-            UpdateStory();
-
-            // Добавляем обработчики событий MouseEnter и MouseLeave
-            Choice1.MouseEnter += Label_MouseEnter;
-            Choice1.MouseLeave += Label_MouseLeave;
-            Choice2.MouseEnter += Label_MouseEnter;
-            Choice2.MouseLeave += Label_MouseLeave;
-
-            //
-            Event.Font = new Font("Century Ghotic", 26, FontStyle.Regular);
-            Choice1.Font = new Font("Century Ghotic", 26, FontStyle.Regular);
-            Choice2.Font = new Font("Century Ghotic", 26, FontStyle.Regular);
+            choiseControlPanel = new ChoiseControlPanel(); // Инициализация экземпляра
+            UpdateStory(); // Вызов метода UpdateStory
         }
-
-        #region label Enter/Leave Event
-        private void Label_MouseEnter(object sender, EventArgs e)
-        {
-            // Изменяем текст при наведении
-            Label label = sender as Label;
-            if (label != null)
-            {
-                label.Font = new System.Drawing.Font(label.Font, System.Drawing.FontStyle.Bold);
-                label.ForeColor = System.Drawing.Color.Blue;
-            }
-        }
-
-        private void Label_MouseLeave(object sender, EventArgs e)
-        {
-            // Восстанавливаем текст после ухода курсора
-            Label label = sender as Label;
-            if (label != null)
-            {
-                label.Font = new System.Drawing.Font(label.Font, System.Drawing.FontStyle.Regular);
-                label.ForeColor = System.Drawing.Color.Black;
-            }
-        }
-        #endregion
 
         private void Choice_Click(object sender, EventArgs e)
         {
             Label currentLabel = (Label)sender;
 
             // Определите, какой выбор был сделан, и обработайте его соответствующим образом
-            if (currentLabel == Choice1)
+            if (currentLabel == choiseControlPanel.Choice1)
             {
                 if (currentStoryStep == 1)
                 {
@@ -67,7 +35,7 @@ namespace Novel
                     currentStoryStep = 1;
                 }
             }
-            else if (currentLabel == Choice2)
+            else if (currentLabel == choiseControlPanel.Choice2)
             {
                 if (currentStoryStep == 1)
                 {
