@@ -93,6 +93,66 @@ namespace Novel.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_part_001 {
+            get {
+                object obj = ResourceManager.GetObject("image_part_001", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_part_002 {
+            get {
+                object obj = ResourceManager.GetObject("image_part_002", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap image_part_003 {
+            get {
+                object obj = ResourceManager.GetObject("image_part_003", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Mirror_dZKJDvksmS_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Mirror-dZKJDvksmS-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Mirror_gU5vpXsSl673NnZp_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Mirror-gU5vpXsSl673NnZp-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap imgonline_com_ua_Mirror_weAmx4nygAWp_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("imgonline-com-ua-Mirror-weAmx4nygAWp-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SeriousEngineer {
             get {
                 object obj = ResourceManager.GetObject("SeriousEngineer", resourceCulture);
