@@ -71,7 +71,7 @@
         }
 
         #endregion
-        private PictureBox imageLayer;
+        private static PictureBox imageLayer;
         private ChoiseControlPanel choiseControlPanel1;
     }
 }

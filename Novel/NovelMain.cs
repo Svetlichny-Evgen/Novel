@@ -2,63 +2,65 @@ namespace Novel
 {
     public partial class NovelMain : Form
     {
-
-        private ChoiseControlPanel choiseControlPanel;
+        public static int currentStoryStep = 1;
+        private static ChoiseControlPanel? choiseControlPanel;
         public NovelMain()
         {
             InitializeComponent();
-            choiseControlPanel = new ChoiseControlPanel(); // Инициализация экземпляра
             UpdateStory(); // Вызов метода UpdateStory
         }
 
-        private void Choice_Click(object sender, EventArgs e)
+        public static void UpdateText(string eventText, string choice1Text, string choice2Text)
         {
-            Label currentLabel = (Label)sender;
+            ChoiseControlPanel.lbEvent.Text = eventText;
+            ChoiseControlPanel.lbChoice1.Text = choice1Text;
+            ChoiseControlPanel.lbChoice2.Text = choice2Text;
+        }
 
-            // Определите, какой выбор был сделан, и обработайте его соответствующим образом
-            if (currentLabel == choiseControlPanel.Choice1)
+        public static void UpdateStory()
+        {
+            switch (currentStoryStep)
             {
-                if (currentStoryStep == 1)
-                {
-                    currentStoryStep = 3;
-                }
-                else if (currentStoryStep == 3)
-                {
-                    currentStoryStep = 4;
-                }
-                else if (currentStoryStep == 4)
-                {
-                    currentStoryStep = 1;
-                }
-                else if (currentStoryStep == 5)
-                {
-                    currentStoryStep = 1;
-                }
+                case 1:
+                    UpdateText("Привет. Так это про тебя мне говорили? " +
+                        "\nМеня зовут Роджер, а это моя мастерская. Тебя зовут Тимоха, я прав?",
+                        "Да", "Нет");
+
+                    ChoiseControlPanel.lbChoice1.Visible = true;
+                    ChoiseControlPanel.lbChoice2.Visible = true;
+                    imageLayer.Image = Properties.Resources.TalkingEngineer;
+                    break;
+
+                case 2:
+                    UpdateText("Хмм... Ну если так, то выметайся отсюда",
+                        "Начать заново", "Начать заново");
+                    ChoiseControlPanel.lbChoice1.Visible = false;
+                    imageLayer.Image = Properties.Resources.AngryEngineer;
+                    break;
+
+                case 3:
+                    UpdateText("Хорошо, тогда введу тебя в курс дела. Я разрабатываю новую супер пупер мега гипер мощную турель. Тебя прислали сюда, так как мне нужен ассистент, так как это может ускорить ход разработки моего чудо-прибора.",
+                        "Хорошо, и что нужно делать?", "А это не опасно?");
+                    imageLayer.Image = Properties.Resources.HappyEngineer;
+                    break;
+
+                case 4:
+                    UpdateText("Я тебе буду давать задания из разряда подай-принеси, ничего сложного. Только будь осторожен и ничего не урони, а то всё взлетит в воздух!",
+                        "Постараюсь... Ну что, приступим! (Начать заново)",
+                        "Чтоооо??? Нет, это опасно, пусть тебе найдут другого ассистента! (Начать заново)");
+                    imageLayer.Image = Properties.Resources.SeriousEngineer;
+                    break;
+
+                case 5:
+                    UpdateText("Безусловно, но одновременно это же весело, не так ли?",
+                        "Нет, пожалуй я откажусь, до свидания! (Начать заново)",
+                        "Ох. Пожалуй ты прав, ну что ж, за работу (Начать заново)");
+                    imageLayer.Image = Properties.Resources.Engineer;
+                    break;
+
+                default:
+                    break;
             }
-            else if (currentLabel == choiseControlPanel.Choice2)
-            {
-                if (currentStoryStep == 1)
-                {
-                    currentStoryStep = 2;
-                }
-                else if (currentStoryStep == 2)
-                {
-                    currentStoryStep = 1;
-                }
-                else if (currentStoryStep == 3)
-                {
-                    currentStoryStep = 5;
-                }
-                else if (currentStoryStep == 4)
-                {
-                    currentStoryStep = 1;
-                }
-                else if (currentStoryStep == 5)
-                {
-                    currentStoryStep = 1;
-                }
-            }
-            UpdateStory();
         }
     }
 }

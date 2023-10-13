@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            Choice2 = new Label();
-            Choice1 = new Label();
-            Event = new Label();
+            lbChoice2 = new Label();
+            lbChoice1 = new Label();
+            lbEvent = new Label();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -40,9 +40,9 @@
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(Choice2, 0, 2);
-            tableLayoutPanel1.Controls.Add(Choice1, 0, 1);
-            tableLayoutPanel1.Controls.Add(Event, 0, 0);
+            tableLayoutPanel1.Controls.Add(lbChoice2, 0, 2);
+            tableLayoutPanel1.Controls.Add(lbChoice1, 0, 1);
+            tableLayoutPanel1.Controls.Add(lbEvent, 0, 0);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -53,38 +53,40 @@
             tableLayoutPanel1.Size = new Size(659, 389);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // Choice2
+            // lbChoice2
             // 
-            Choice2.AutoSize = true;
-            Choice2.Dock = DockStyle.Fill;
-            Choice2.Location = new Point(3, 202);
-            Choice2.Name = "Choice2";
-            Choice2.Size = new Size(653, 187);
-            Choice2.TabIndex = 2;
-            Choice2.Text = "Choice2";
-            Choice2.TextAlign = ContentAlignment.MiddleCenter;
+            lbChoice2.AutoSize = true;
+            lbChoice2.Dock = DockStyle.Fill;
+            lbChoice2.Location = new Point(3, 202);
+            lbChoice2.Name = "lbChoice2";
+            lbChoice2.Size = new Size(653, 187);
+            lbChoice2.TabIndex = 2;
+            lbChoice2.Text = "Choice2";
+            lbChoice2.TextAlign = ContentAlignment.MiddleCenter;
+            lbChoice2.Click += Choice_Click;
             // 
-            // Choice1
+            // lbChoice1
             // 
-            Choice1.AutoSize = true;
-            Choice1.Dock = DockStyle.Fill;
-            Choice1.Location = new Point(3, 15);
-            Choice1.Name = "Choice1";
-            Choice1.Size = new Size(653, 187);
-            Choice1.TabIndex = 1;
-            Choice1.Text = "Choice1";
-            Choice1.TextAlign = ContentAlignment.MiddleCenter;
+            lbChoice1.AutoSize = true;
+            lbChoice1.Dock = DockStyle.Fill;
+            lbChoice1.Location = new Point(3, 15);
+            lbChoice1.Name = "lbChoice1";
+            lbChoice1.Size = new Size(653, 187);
+            lbChoice1.TabIndex = 1;
+            lbChoice1.Text = "Choice1";
+            lbChoice1.TextAlign = ContentAlignment.MiddleCenter;
+            lbChoice1.Click += Choice_Click;
             // 
-            // Event
+            // lbEvent
             // 
-            Event.AutoSize = true;
-            Event.Dock = DockStyle.Fill;
-            Event.Location = new Point(3, 0);
-            Event.Name = "Event";
-            Event.Size = new Size(653, 15);
-            Event.TabIndex = 0;
-            Event.Text = "Event";
-            Event.TextAlign = ContentAlignment.MiddleCenter;
+            lbEvent.AutoSize = true;
+            lbEvent.Dock = DockStyle.Fill;
+            lbEvent.Location = new Point(3, 0);
+            lbEvent.Name = "lbEvent";
+            lbEvent.Size = new Size(653, 15);
+            lbEvent.TabIndex = 0;
+            lbEvent.Text = "Event";
+            lbEvent.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // ChoiseControlPanel
             // 
@@ -101,8 +103,8 @@
         #endregion
 
         public TableLayoutPanel tableLayoutPanel1;
-        public Label Choice2;
-        public Label Choice1;
-        public Label Event;
+        public static Label lbChoice2;
+        public static Label lbChoice1;
+        public static Label lbEvent;
     }
 }
