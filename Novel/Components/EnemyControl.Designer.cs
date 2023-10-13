@@ -45,7 +45,7 @@
             head.Location = new Point(0, 0);
             head.Margin = new Padding(0);
             head.Name = "head";
-            head.Size = new Size(378, 117);
+            head.Size = new Size(290, 117);
             head.TabIndex = 0;
             head.UseVisualStyleBackColor = true;
             // 
@@ -59,7 +59,7 @@
             body.Location = new Point(0, 117);
             body.Margin = new Padding(0);
             body.Name = "body";
-            body.Size = new Size(378, 117);
+            body.Size = new Size(290, 117);
             body.TabIndex = 1;
             body.UseVisualStyleBackColor = true;
             // 
@@ -73,7 +73,7 @@
             legs.Location = new Point(0, 234);
             legs.Margin = new Padding(0);
             legs.Name = "legs";
-            legs.Size = new Size(378, 117);
+            legs.Size = new Size(290, 117);
             legs.TabIndex = 2;
             legs.UseVisualStyleBackColor = true;
             // 
@@ -91,7 +91,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Size = new Size(378, 351);
+            tableLayoutPanel1.Size = new Size(290, 351);
             tableLayoutPanel1.TabIndex = 3;
             // 
             // EnemyControl
@@ -100,7 +100,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(tableLayoutPanel1);
             Name = "EnemyControl";
-            Size = new Size(378, 351);
+            Size = new Size(290, 351);
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }

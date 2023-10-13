@@ -10,6 +10,8 @@ namespace Novel
             UpdateStory(); // Вызов метода UpdateStory
         }
 
+
+        #region Story update text
         public static void UpdateText(string eventText, string choice1Text, string choice2Text)
         {
             ChoiseControlPanel.lbEvent.Text = eventText;
@@ -47,7 +49,7 @@ namespace Novel
                 case 4:
                     UpdateText("Я тебе буду давать задания из разряда подай-принеси, ничего сложного. Только будь осторожен и ничего не урони, а то всё взлетит в воздух!",
                         "Постараюсь... Ну что, приступим! (Начать заново)",
-                        "Чтоооо??? Нет, это опасно, пусть тебе найдут другого ассистента! (Начать заново)");
+                        "Чтоооо??? Нет, это опасно, пусть тебе найдут другого ассистента!");
                     imageLayer.Image = Properties.Resources.SeriousEngineer;
                     break;
 
@@ -58,9 +60,17 @@ namespace Novel
                     imageLayer.Image = Properties.Resources.Engineer;
                     break;
 
+                case 6:
+                    UpdateText("Не так быстро, гадёныш. Ты узнал слишком много и поэтому я тебя просто так не отпущу!", 
+                        "Ладно... Помогу, ибо если я остануь, усть хотя бы небольшой шанс того, что я не пострадаю", 
+                        "(Начать бой)");
+                    imageLayer.Image = Properties.Resources.AngryEngineer;
+                    break;
+
                 default:
                     break;
             }
         }
+        #endregion
     }
 }

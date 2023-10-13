@@ -113,6 +113,10 @@ namespace Novel
                 {
                     NovelMain.currentStoryStep = 1;
                 }
+                else if (NovelMain.currentStoryStep == 6)
+                {
+                    NovelMain.currentStoryStep = 1;
+                }
             }
             else if (currentLabel == lbChoice2)
             {
@@ -130,10 +134,15 @@ namespace Novel
                 }
                 else if (NovelMain.currentStoryStep == 4)
                 {
-                    NovelMain.currentStoryStep = 1;
+                    NovelMain.currentStoryStep = 6;
                 }
                 else if (NovelMain.currentStoryStep == 5)
                 {
+                    NovelMain.currentStoryStep = 1;
+                }
+                else if (NovelMain.currentStoryStep == 6)
+                {
+                    // TODO: Начать бой
                     NovelMain.currentStoryStep = 1;
                 }
             }
