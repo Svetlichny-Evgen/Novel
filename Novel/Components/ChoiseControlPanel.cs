@@ -143,7 +143,7 @@ namespace Novel
                 else if (NovelMain.currentStoryStep == 6)
                 {
                     // TODO: Начать бой
-                    NovelMain.currentStoryStep = 1;
+                    NovelMain.currentStoryStep = 7;
                 }
             }
             NovelMain.UpdateStory();

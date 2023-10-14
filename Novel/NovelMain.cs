@@ -5,15 +5,12 @@ namespace Novel
     public partial class NovelMain : Form
     {
         public static int currentStoryStep = 1;
-        private static ChoiseControlPanel? choiseControlPanel;
-        PlayerPanel playerPnl;
-        EnemyControl enemyCtrl;
-        Random random = new Random();
+        private static ChoiseControlPanel? choiseControlPanel = null;
+
         public NovelMain()
         {
             InitializeComponent();
             UpdateStory(); // Вызов метода UpdateStory
-            Fight();
         }
 
 
@@ -72,57 +69,15 @@ namespace Novel
                         "(Начать бой)");
                     imageLayer.Image = Properties.Resources.AngryEngineer;
                     break;
-
+                
+                case 7:
+                    Fight form = new Fight();
+                    form.Show();
+                    break;
                 default:
                     break;
             }
         }
         #endregion
-
-        #region Fight
-        public void Fight()
-        {
-            PersonModel enemy = new PersonModel()
-            {
-                // К сожалению что-то пошло не так, и при попітке переименования ресурсов возникает критическая остановка
-                head = Properties.Resources.imgonline_com_ua_Mirror_dZKJDvksmS_removebg_preview,
-                tail = Properties.Resources.imgonline_com_ua_Mirror_weAmx4nygAWp_removebg_preview,
-                legs = Properties.Resources.imgonline_com_ua_Mirror_gU5vpXsSl673NnZp_removebg_preview
-            };
-
-            enemyCtrl = new EnemyControl(enemy);
-            enemyCtrl.ClickOnPerson += Enemy_ClickOnPerson;
-            enemyCtrl.Location = new Point(565, 100);
-            Controls.Add(enemyCtrl);
-
-
-            PersonModel player = new PersonModel()
-            {
-                // К сожалению что-то пошло не так, и при попітке переименования ресурсов возникает критическая остановка
-                head = Properties.Resources.image_part_001,
-                tail = Properties.Resources.image_part_002,
-                legs = Properties.Resources.image_part_003,
-                hand = Properties.Resources.Sheald
-
-            };
-            playerPnl = new PlayerPanel(player);
-            playerPnl.Location = new Point(0, 100);
-            imageLayer.Hide();
-            choiseControlPanel1.Hide();
-            Controls.Add(playerPnl);
-
-        }
-
-        private async void Enemy_ClickOnPerson(object? sender, EventArgs e) 
-        {
-            enemyCtrl.Animation();
-            await Task.Delay(500);
-            int part  = random.Next(0, 3);
-            playerPnl.getDamage(part);
-            //Из-за того, что я не удалил задний фон у игрока - не видно куда попали
-            playerPnl.Animation();
-        }
-        #endregion
-
     }
 }
