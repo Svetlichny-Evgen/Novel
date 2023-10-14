@@ -40,7 +40,10 @@
             head.BackgroundImage = Properties.Resources.imgonline_com_ua_Mirror_dZKJDvksmS_removebg_preview;
             head.BackgroundImageLayout = ImageLayout.Zoom;
             head.Dock = DockStyle.Fill;
+            head.FlatAppearance.BorderColor = Color.Red;
             head.FlatAppearance.BorderSize = 0;
+            head.FlatAppearance.MouseDownBackColor = Color.SandyBrown;
+            head.FlatAppearance.MouseOverBackColor = Color.MistyRose;
             head.FlatStyle = FlatStyle.Flat;
             head.Location = new Point(0, 0);
             head.Margin = new Padding(0);
@@ -54,7 +57,10 @@
             body.BackgroundImage = Properties.Resources.imgonline_com_ua_Mirror_weAmx4nygAWp_removebg_preview;
             body.BackgroundImageLayout = ImageLayout.Zoom;
             body.Dock = DockStyle.Fill;
+            body.FlatAppearance.BorderColor = Color.Red;
             body.FlatAppearance.BorderSize = 0;
+            body.FlatAppearance.MouseDownBackColor = Color.SandyBrown;
+            body.FlatAppearance.MouseOverBackColor = Color.MistyRose;
             body.FlatStyle = FlatStyle.Flat;
             body.Location = new Point(0, 117);
             body.Margin = new Padding(0);
@@ -68,7 +74,10 @@
             legs.BackgroundImage = Properties.Resources.imgonline_com_ua_Mirror_gU5vpXsSl673NnZp_removebg_preview;
             legs.BackgroundImageLayout = ImageLayout.Zoom;
             legs.Dock = DockStyle.Fill;
+            legs.FlatAppearance.BorderColor = Color.Red;
             legs.FlatAppearance.BorderSize = 0;
+            legs.FlatAppearance.MouseDownBackColor = Color.SandyBrown;
+            legs.FlatAppearance.MouseOverBackColor = Color.MistyRose;
             legs.FlatStyle = FlatStyle.Flat;
             legs.Location = new Point(0, 234);
             legs.Margin = new Padding(0);

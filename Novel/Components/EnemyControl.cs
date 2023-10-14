@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Novel.Models;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,38 +13,47 @@ namespace Novel
 {
     public partial class EnemyControl : UserControl
     {
-        public EnemyControl()
+        public EnemyControl(PersonModel pm)
         {
             InitializeComponent();
-            // Добавляем обработчики событий MouseEnter и MouseLeave
-            head.MouseEnter += Label_MouseEnter;
-            head.MouseLeave += Label_MouseLeave;
-            body.MouseEnter += Label_MouseEnter;
-            body.MouseLeave += Label_MouseLeave;
-            legs.MouseEnter += Label_MouseEnter;
-            legs.MouseLeave += Label_MouseLeave;
+
+            Head = pm.head;
+            Body = pm.tail;
+            Legs = pm.legs;
         }
 
-        #region label Enter/Leave Event
-        private void Label_MouseEnter(object sender, EventArgs e)
+        public Image Head
         {
-            // Изменяем текст при наведении
-            Button btn = sender as Button;
-            if (btn != null)
+            get
             {
-                btn.ForeColor = System.Drawing.Color.Red;
+                return head.BackgroundImage;
+            }
+            set
+            {
+                head.BackgroundImage = value;
             }
         }
-
-        private void Label_MouseLeave(object sender, EventArgs e)
+        public Image Body
         {
-            // Восстанавливаем текст после ухода курсора
-            Button btn = sender as Button;
-            if (btn != null)
+            get
             {
-                btn.ForeColor = System.Drawing.Color.White;
+                return body.BackgroundImage;
+            }
+            set
+            {
+                body.BackgroundImage = value;
             }
         }
-        #endregion
+        public Image Legs
+        {
+            get
+            {
+                return legs.BackgroundImage;
+            }
+            set
+            {
+                legs.BackgroundImage = value;
+            }
+        }
     }
 }

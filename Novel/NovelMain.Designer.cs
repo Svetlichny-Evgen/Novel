@@ -38,7 +38,6 @@
             imageLayer.BackgroundImage = Properties.Resources.Workshop;
             imageLayer.BackgroundImageLayout = ImageLayout.Zoom;
             imageLayer.Dock = DockStyle.Fill;
-            imageLayer.Image = Properties.Resources.TalkingEngineer;
             imageLayer.Location = new Point(0, 0);
             imageLayer.Name = "imageLayer";
             imageLayer.Size = new Size(920, 613);
@@ -48,7 +47,10 @@
             // 
             // choiseControlPanel1
             // 
+            choiseControlPanel1.Choice1 = "Choice1";
+            choiseControlPanel1.Choice2 = "Choice2";
             choiseControlPanel1.Dock = DockStyle.Bottom;
+            choiseControlPanel1.Event = "Event";
             choiseControlPanel1.Location = new Point(0, 388);
             choiseControlPanel1.Margin = new Padding(5, 4, 5, 4);
             choiseControlPanel1.Name = "choiseControlPanel1";
@@ -71,7 +73,7 @@
         }
 
         #endregion
-        private static PictureBox imageLayer;
         private ChoiseControlPanel choiseControlPanel1;
+        private static PictureBox imageLayer;
     }
 }

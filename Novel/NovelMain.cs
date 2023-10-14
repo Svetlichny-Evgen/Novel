@@ -1,13 +1,18 @@
+using Novel.Models;
+
 namespace Novel
 {
     public partial class NovelMain : Form
     {
         public static int currentStoryStep = 1;
         private static ChoiseControlPanel? choiseControlPanel;
+        PlayerPanel playerPnl;
+        EnemyControl enemyCtrl;
         public NovelMain()
         {
             InitializeComponent();
             UpdateStory(); // Вызов метода UpdateStory
+            //Fight();
         }
 
 
@@ -61,8 +66,8 @@ namespace Novel
                     break;
 
                 case 6:
-                    UpdateText("Не так быстро, гадёныш. Ты узнал слишком много и поэтому я тебя просто так не отпущу!", 
-                        "Ладно... Помогу, ибо если я остануь, усть хотя бы небольшой шанс того, что я не пострадаю", 
+                    UpdateText("Не так быстро, гадёныш. Ты узнал слишком много и поэтому я тебя просто так не отпущу!",
+                        "Ладно... Помогу, ибо если я остануь, усть хотя бы небольшой шанс того, что я не пострадаю",
                         "(Начать бой)");
                     imageLayer.Image = Properties.Resources.AngryEngineer;
                     break;
@@ -70,6 +75,35 @@ namespace Novel
                 default:
                     break;
             }
+        }
+        #endregion
+
+        #region Fight
+        public void Fight()
+        {
+            PersonModel enemy = new PersonModel()
+            {
+                // К сожалению что-то пошло не так, и при попітке переименования ресурсов возникает критическая остановка
+                head = Properties.Resources.imgonline_com_ua_Mirror_dZKJDvksmS_removebg_preview,
+                tail = Properties.Resources.imgonline_com_ua_Mirror_weAmx4nygAWp_removebg_preview,
+                legs = Properties.Resources.imgonline_com_ua_Mirror_gU5vpXsSl673NnZp_removebg_preview
+            };
+
+            enemyCtrl = new EnemyControl(enemy);
+
+
+            PersonModel player = new PersonModel()
+            {
+                // К сожалению что-то пошло не так, и при попітке переименования ресурсов возникает критическая остановка
+                head = Properties.Resources.image_part_001,
+                tail = Properties.Resources.image_part_002,
+                legs = Properties.Resources.image_part_003,
+
+            };
+            playerPnl = new PlayerPanel(player, Properties.Resources.Sheald);
+            imageLayer.Hide();
+            Controls.Add(playerPnl);
+            Controls.Add(enemyCtrl);
         }
         #endregion
     }

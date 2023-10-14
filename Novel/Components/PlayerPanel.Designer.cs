@@ -28,63 +28,63 @@
         /// </summary>
         private void InitializeComponent()
         {
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
+            head = new PictureBox();
+            body = new PictureBox();
+            legs = new PictureBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)head).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)body).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)legs).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // pictureBox1
+            // head
             // 
-            pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.image_part_001;
-            pictureBox1.Location = new Point(0, 0);
-            pictureBox1.Margin = new Padding(0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(275, 106);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
+            head.BackgroundImageLayout = ImageLayout.Zoom;
+            head.Dock = DockStyle.Fill;
+            head.Image = Properties.Resources.image_part_001;
+            head.Location = new Point(0, 0);
+            head.Margin = new Padding(0);
+            head.Name = "head";
+            head.Size = new Size(275, 106);
+            head.SizeMode = PictureBoxSizeMode.StretchImage;
+            head.TabIndex = 0;
+            head.TabStop = false;
             // 
-            // pictureBox2
+            // body
             // 
-            pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Image = Properties.Resources.image_part_002;
-            pictureBox2.Location = new Point(0, 106);
-            pictureBox2.Margin = new Padding(0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(275, 106);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
+            body.BackgroundImageLayout = ImageLayout.Zoom;
+            body.Dock = DockStyle.Fill;
+            body.Image = Properties.Resources.image_part_002;
+            body.Location = new Point(0, 106);
+            body.Margin = new Padding(0);
+            body.Name = "body";
+            body.Size = new Size(275, 106);
+            body.SizeMode = PictureBoxSizeMode.StretchImage;
+            body.TabIndex = 1;
+            body.TabStop = false;
             // 
-            // pictureBox3
+            // legs
             // 
-            pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
-            pictureBox3.Dock = DockStyle.Fill;
-            pictureBox3.Image = Properties.Resources.image_part_003;
-            pictureBox3.Location = new Point(0, 212);
-            pictureBox3.Margin = new Padding(0);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(275, 106);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 2;
-            pictureBox3.TabStop = false;
+            legs.BackgroundImageLayout = ImageLayout.Zoom;
+            legs.Dock = DockStyle.Fill;
+            legs.Image = Properties.Resources.image_part_003;
+            legs.Location = new Point(0, 212);
+            legs.Margin = new Padding(0);
+            legs.Name = "legs";
+            legs.Size = new Size(275, 106);
+            legs.SizeMode = PictureBoxSizeMode.StretchImage;
+            legs.TabIndex = 2;
+            legs.TabStop = false;
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel1.Controls.Add(pictureBox1, 0, 0);
-            tableLayoutPanel1.Controls.Add(pictureBox3, 0, 2);
-            tableLayoutPanel1.Controls.Add(pictureBox2, 0, 1);
+            tableLayoutPanel1.Controls.Add(head, 0, 0);
+            tableLayoutPanel1.Controls.Add(legs, 0, 2);
+            tableLayoutPanel1.Controls.Add(body, 0, 1);
             tableLayoutPanel1.Dock = DockStyle.Fill;
             tableLayoutPanel1.Location = new Point(0, 0);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -102,18 +102,18 @@
             Controls.Add(tableLayoutPanel1);
             Name = "PlayerPanel";
             Size = new Size(275, 318);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)head).EndInit();
+            ((System.ComponentModel.ISupportInitialize)body).EndInit();
+            ((System.ComponentModel.ISupportInitialize)legs).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
+        private PictureBox head;
+        private PictureBox body;
+        private PictureBox legs;
         private TableLayoutPanel tableLayoutPanel1;
     }
 }
