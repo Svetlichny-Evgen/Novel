@@ -22,6 +22,7 @@ namespace Novel
             Legs = pm.legs;
         }
 
+        #region Init
         public Image Head
         {
             get
@@ -54,6 +55,39 @@ namespace Novel
             {
                 legs.BackgroundImage = value;
             }
+        }
+        #endregion
+
+        public async void Animation()
+        {
+            Point current = Location;
+            int power = 3;
+            for (int i = 0; i < 10; i++)
+            {
+                if (i % 2 == 0)
+                {
+                    Location = new Point(current.X + power, current.Y - power);
+                }
+                else
+                {
+                    Location = new Point(current.X - power, current.Y + power);
+                }
+                await Task.Delay(30);
+            }
+            Location = current;
+        }
+
+        event EventHandler clickOnPerson;
+        public event EventHandler ClickOnPerson
+        {
+            add { clickOnPerson += value; }
+            remove { clickOnPerson -= value; }
+        }
+
+
+        private void body_Click(object sender, EventArgs e)
+        {
+            clickOnPerson.Invoke(sender, e);
         }
     }
 }

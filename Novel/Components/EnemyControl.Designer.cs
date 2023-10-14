@@ -51,6 +51,7 @@
             head.Size = new Size(290, 117);
             head.TabIndex = 0;
             head.UseVisualStyleBackColor = true;
+            head.Click += body_Click;
             // 
             // body
             // 
@@ -68,6 +69,7 @@
             body.Size = new Size(290, 117);
             body.TabIndex = 1;
             body.UseVisualStyleBackColor = true;
+            body.Click += body_Click;
             // 
             // legs
             // 
@@ -85,6 +87,7 @@
             legs.Size = new Size(290, 117);
             legs.TabIndex = 2;
             legs.UseVisualStyleBackColor = true;
+            legs.Click += body_Click;
             // 
             // tableLayoutPanel1
             // 

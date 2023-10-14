@@ -8,6 +8,7 @@ namespace Novel
         private static ChoiseControlPanel? choiseControlPanel;
         PlayerPanel playerPnl;
         EnemyControl enemyCtrl;
+        Random random = new Random();
         public NovelMain()
         {
             InitializeComponent();
@@ -90,7 +91,9 @@ namespace Novel
             };
 
             enemyCtrl = new EnemyControl(enemy);
+            enemyCtrl.ClickOnPerson += Enemy_ClickOnPerson;
             enemyCtrl.Location = new Point(565, 100);
+            Controls.Add(enemyCtrl);
 
 
             PersonModel player = new PersonModel()
@@ -107,8 +110,19 @@ namespace Novel
             imageLayer.Hide();
             choiseControlPanel1.Hide();
             Controls.Add(playerPnl);
-            Controls.Add(enemyCtrl);
+
+        }
+
+        private async void Enemy_ClickOnPerson(object? sender, EventArgs e) 
+        {
+            enemyCtrl.Animation();
+            await Task.Delay(500);
+            int part  = random.Next(0, 3);
+            playerPnl.getDamage(part);
+            //Из-за того, что я не удалил задний фон у игрока - не видно куда попали
+            playerPnl.Animation();
         }
         #endregion
+
     }
 }
