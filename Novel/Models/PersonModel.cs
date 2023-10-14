@@ -11,5 +11,6 @@ namespace Novel.Models
         public Image head {  get; set; }
         public Image tail { get; set; }
         public Image legs { get; set; }
+        public Image hand { get; set; }
     }
 }

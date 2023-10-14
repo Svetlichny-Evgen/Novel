@@ -14,17 +14,21 @@ namespace Novel
 {
     public partial class PlayerPanel : UserControl
     {
-        Image _firstLayer;
-        public PlayerPanel(PersonModel pm, Image firstLayer)
+        PersonModel _pm;
+        public PlayerPanel(PersonModel pm)
         {
             InitializeComponent();
+
+            _pm = pm;
 
             Head = pm.head;
             Body = pm.tail;
             Legs = pm.legs;
-            _firstLayer = firstLayer;
+
+            BodyImage = pm.hand;
         }
 
+        #region Head/Body/Legs
         public Image Head
         {
             get
@@ -57,6 +61,55 @@ namespace Novel
             {
                 legs.BackgroundImage = value;
             }
+        }
+        #endregion
+
+        #region Images
+        public Image HeadImage
+        {
+            get
+            {
+                return head.Image;
+            }
+            set
+            {
+                head.Image = value;
+            }
+        }
+        public Image BodyImage
+        {
+            get
+            {
+                return body.Image;
+            }
+            set
+            {
+                body.Image = value;
+            }
+        }
+        public Image LegsImage
+        {
+            get
+            {
+                return legs.Image;
+            }
+            set
+            {
+                legs.Image = value;
+            }
+        }
+
+        #endregion
+
+        private void SaveZone(object sender, EventArgs e)
+        {
+            ClearHand();
+            PictureBox current = (PictureBox)sender;
+            current.Image = _pm.hand;
+        }
+        public void ClearHand() 
+        {
+            HeadImage = BodyImage = LegsImage = null;
         }
     }
 }

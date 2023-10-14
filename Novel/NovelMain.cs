@@ -12,7 +12,7 @@ namespace Novel
         {
             InitializeComponent();
             UpdateStory(); // ֲûחמג לועמהא UpdateStory
-            //Fight();
+            Fight();
         }
 
 
@@ -90,6 +90,7 @@ namespace Novel
             };
 
             enemyCtrl = new EnemyControl(enemy);
+            enemyCtrl.Location = new Point(565, 100);
 
 
             PersonModel player = new PersonModel()
@@ -98,10 +99,13 @@ namespace Novel
                 head = Properties.Resources.image_part_001,
                 tail = Properties.Resources.image_part_002,
                 legs = Properties.Resources.image_part_003,
+                hand = Properties.Resources.Sheald
 
             };
-            playerPnl = new PlayerPanel(player, Properties.Resources.Sheald);
+            playerPnl = new PlayerPanel(player);
+            playerPnl.Location = new Point(0, 100);
             imageLayer.Hide();
+            choiseControlPanel1.Hide();
             Controls.Add(playerPnl);
             Controls.Add(enemyCtrl);
         }

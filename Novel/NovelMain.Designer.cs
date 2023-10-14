@@ -36,11 +36,11 @@
             // imageLayer
             // 
             imageLayer.BackgroundImage = Properties.Resources.Workshop;
-            imageLayer.BackgroundImageLayout = ImageLayout.Zoom;
+            imageLayer.BackgroundImageLayout = ImageLayout.Stretch;
             imageLayer.Dock = DockStyle.Fill;
             imageLayer.Location = new Point(0, 0);
             imageLayer.Name = "imageLayer";
-            imageLayer.Size = new Size(920, 613);
+            imageLayer.Size = new Size(1289, 613);
             imageLayer.SizeMode = PictureBoxSizeMode.Zoom;
             imageLayer.TabIndex = 2;
             imageLayer.TabStop = false;
@@ -54,14 +54,14 @@
             choiseControlPanel1.Location = new Point(0, 388);
             choiseControlPanel1.Margin = new Padding(5, 4, 5, 4);
             choiseControlPanel1.Name = "choiseControlPanel1";
-            choiseControlPanel1.Size = new Size(920, 225);
+            choiseControlPanel1.Size = new Size(1289, 225);
             choiseControlPanel1.TabIndex = 3;
             // 
             // NovelMain
             // 
             AutoScaleDimensions = new SizeF(11F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(920, 613);
+            ClientSize = new Size(1289, 613);
             Controls.Add(choiseControlPanel1);
             Controls.Add(imageLayer);
             Font = new Font("MT Extra", 14.2499981F, FontStyle.Bold, GraphicsUnit.Point);

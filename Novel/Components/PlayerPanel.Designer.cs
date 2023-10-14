@@ -50,6 +50,7 @@
             head.SizeMode = PictureBoxSizeMode.StretchImage;
             head.TabIndex = 0;
             head.TabStop = false;
+            head.Click += SaveZone;
             // 
             // body
             // 
@@ -63,6 +64,7 @@
             body.SizeMode = PictureBoxSizeMode.StretchImage;
             body.TabIndex = 1;
             body.TabStop = false;
+            body.Click += SaveZone;
             // 
             // legs
             // 
@@ -76,6 +78,7 @@
             legs.SizeMode = PictureBoxSizeMode.StretchImage;
             legs.TabIndex = 2;
             legs.TabStop = false;
+            legs.Click += SaveZone;
             // 
             // tableLayoutPanel1
             // 
