@@ -132,7 +132,6 @@ namespace Novel
         {
             HeadImage = BodyImage = LegsImage = null;
         }
-
         public async void getDamage(int part)
         {
             PictureBox? current = null;
@@ -159,7 +158,7 @@ namespace Novel
                 color = damage; 
             }
             current.BackColor = color;
-            await Task.Delay(500);
+            await Task.Delay(300);
             current.BackColor = Color.Transparent;
         }
     }

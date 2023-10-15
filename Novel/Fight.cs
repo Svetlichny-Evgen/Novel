@@ -8,18 +8,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace Novel
 {
     public partial class Fight : Form
     {
-        private static PlayerPanel? playerPnl = null;
-        private static EnemyControl? enemyCtrl = null;
-        private static Random random = new Random();
+        private PlayerPanel playerPnl;
+        private EnemyControl enemyCtrl;
+        private Random random = new Random();
         public Fight()
         {
             InitializeComponent();
         }
+
 
         private void Fight_Load(object sender, EventArgs e)
         {
@@ -49,16 +51,36 @@ namespace Novel
             playerPnl = new PlayerPanel(player);
             playerPnl.Location = new Point(0, 100);
             Controls.Add(playerPnl);
-        }
 
-        private static async void Enemy_ClickOnPerson(object? sender, EventArgs e)
+            SetElementsPosition();
+        }
+        private void SetElementsPosition() 
         {
+            int centerX = Width / 2 - dice.Width / 2;
+            int topPosition = (int)(Height * 0.8 - dice.Height);
+
+            dice.Location = new Point(centerX, topPosition);
+        }
+        bool isAnimate = false;
+        private async void Enemy_ClickOnPerson(object? sender, EventArgs e)
+        {
+            if (isAnimate)
+                return;
+            isAnimate = true;
+            int diceEnemy = await dice.rollDice();
+            helthEnemy.Value -= diceEnemy * 3;
+            
             enemyCtrl.Animation();
             await Task.Delay(500);
+
+            int diceHero = await dice.rollDice();
+            helthPlayer.Value -= diceHero * 3;
+
             int part = random.Next(0, 3);
             playerPnl.getDamage(part);
             //Из-за того, что я не удалил задний фон у игрока - не видно куда попали
             playerPnl.Animation();
+            isAnimate = false;
         }
     }
 }
